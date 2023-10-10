@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/style.css">
+</head>
+<body>
+  <div class="unicode_wrap">
+    <form name="Form1">
+        <div class="unicode_roman">
+            <div class="unicode_cap">Type Romanized Nepali</div>
+            <textarea class="textarea_unicode" name="ascii" cols="62" rows="7" onKeyUp="javascript:convert();"></textarea>
+        </div>
+        <br>
+        <div class="unicode_roman">
+            <div class="unicode_cap_1">Nepali Unicode</div>
+            <textarea class="textarea_unicode" name="unicode" id="unicodeTextarea" cols="62" rows="7" readonly></textarea>
+        </div>
+        <br>
+        <span class="btn">
+            <input class="btn" title="On Internet Explorer, it will perform the 'Copy' command, too. But not so on other browsers due to their limitations. For those, after selected, right click and select 'Copy' " onClick="javascript:selectAll(Form1.unicode);" value="Select All" name="sAll" type="button">
+        </span>
+        <span class="btn">
+            <input class="btn" onClick="javascript:clearInput();" value="Clear" name="clear" type="button">
+        </span>
+        <span class="btn">
+            <select class="btn" onChange="javascript:convert();" name="htmlEncode">
+                <option value="false" selected="selected">Nepali Unicode</option>
+                <option value="true">Encoded Unicode</option>
+            </select>
+        </span>
+        <span class="btn">
+            <input disabled="disabled" class="btn" onClick="javascript:translate(Form1.ascii, Form1.unicode, eval(Form1.htmlEncode.value), Form1.smartConverter_.checked);" value="Convert" name="convertNow" type="hidden">
+            <input class="btn" onClick="javascript:smartConverter(Form1.smartConverter_.checked);convert();" checked="checked" name="smartConverter_" value="ON" type="checkbox">Smart Converter
+        </span>
+        <span class="btn">
+            <button class="btn" onClick="copyToClipboard();">Copy</button>
+        </span>
+    </form>
+</div>
+</body>
+<script language="JavaScript" src="./static/branch.js"></script>
+<script language="JavaScript" src="./static/converter.js"></script>
+<script language="JavaScript" src="./static/main.js"></script>
+</html>
